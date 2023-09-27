@@ -10,6 +10,7 @@ function Page() {
   const [cards, setCards] = useState([]);
   const [user, setUser] = useState(null);
   const [turns, setTurns] = useState(0);
+  const [success, setSuccess] = useState(0);
   const [optionOne, setOptionOne] = useState(null);
   const [optionTwo, setOptionTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
@@ -70,23 +71,36 @@ function Page() {
           return prevCards.map(card => {
             if (card.src === optionOne.src) {
               return { ...card, matched: true }
+
             } else {
               return card
             }
           })
         })
-        resetTurn()
+        resetTurnOkey()
+      
       } else {
-        setTimeout(() => resetTurn(), 1000)
+        setTimeout(() => {
+
+          resetTurnError()
+          ,3000
+        })
       }
     }
 
   }, [optionOne, optionTwo]);
 
-  const resetTurn = () => {
+  const resetTurnError = () => {
     setOptionOne(null)
     setOptionTwo(null)
-    setTurns(prevTurns => prevTurns + 1)
+    setTurns( prevTurns => prevTurns + 1 )
+    setDisabled(false)
+  }
+
+  const resetTurnOkey = () => {
+    setOptionOne(null)
+    setOptionTwo(null)
+    setSuccess( prevTurns => prevTurns + 1)
     setDisabled(false)
   }
 
@@ -124,7 +138,7 @@ function Page() {
       <div className="gameHidden">
 
         <h1 className="text-2xl font-bold tracking-wide uppercase border-b border-gray-500 mb-3 titleGame"><span className="titleGame__img"><Image  className="titleGame__img-img" src={iconMascota} alt="Icono Mascota"/></span> <span>DESCUBRE TU MASCOTA!</span></h1>
-        <p className="p-5 bg-sky-600 rounded my-5 text-center flex justify-between"><span>Bienvenido!! : {user}</span>    <span>Puntaje : {turns}</span></p>
+        <p className="p-5 bg-sky-600 rounded my-5 text-center flex justify-between"><span>Bienvenido!! : {user}</span>    <span>Errores : {turns} / Aciertos : {success}</span></p>
 
         <section className='gap-3 grid md:grid-cols-6 grid-cols-1'>
 
