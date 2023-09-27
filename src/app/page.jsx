@@ -90,12 +90,6 @@ function Page() {
 
   }, [optionOne, optionTwo]);
 
-  // const resetTurnError = () => {
-  //   setOptionOne(null)
-  //   setOptionTwo(null)
-  //   setTurns( prevTurns => prevTurns + 1 )
-  //   setDisabled(false)
-  // }
 
   const resetTurn= () => {
     setOptionOne(null)
@@ -104,7 +98,6 @@ function Page() {
   }
 
   const resetGame = () => {
-    // var cat = localStorage.getItem(userName);
     setCards([])
     setOptionOne(null)
     setOptionTwo(null)
