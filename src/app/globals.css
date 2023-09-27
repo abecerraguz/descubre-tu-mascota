@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,14 +14,114 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-slate-700;
+  @apply  text-white;
+  @apply bg-gradient-to-r from-slate-700
+}
+
+
+
+.card{
+  position: relative;
+}
+
+
+.card img{
+  width: 100%;
+  display: block;
+  border: 4px solid #ffffffa4;
+  border-radius: 6px;
+  transition: all ease-in 0.5s;
+  box-shadow: 5px 5px 5px 0px #000000a6;
+}
+
+.card img:hover{
+  width: 100%;
+  display: block;
+  border: 4px solid #ffffff;
+  border-radius: 6px;
+  box-shadow: 10px 10px 10px 0px #000000a6;
+}
+/* front of card */
+
+.card .front{
+  transform: rotateY(90deg);
+  position: absolute;
+}
+.flipped .front{
+  transform: rotateY(0deg);
+}
+
+/* back of card */
+
+.card .back{
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateX(90deg);
+  transition-delay: 0s;
+}
+
+.formInitGame {
+  top: 0;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  min-width: 320px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 1.5em;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 6px rgba(5,27,44,.06), 0 2px 32px rgba(5,27,44,.16);
+  left: 50%;
+  transform: translate(-50%) translateY(-110%);
+  transition: transform .5s cubic-bezier(.62,.07,.54,.77) .5s;
+}
+
+.slide-down {
+  transform: translate(-50%) translateY(0);
+}
+
+.gameHidden {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.gameShow {
+  opacity: 1;
+}
+
+.titleGame{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleGame__img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(5,27,44,.06), 0 2px 32px rgba(5,27,44,.16);
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.titleGame__img-img{
+  width: calc(100% - 20px);
+  height: auto;
 }
