@@ -81,9 +81,8 @@ function Page() {
       
       } else {
         setTimeout(() => {
-
           resetTurnError()
-          ,3000
+          ,1000
         })
       }
     }
