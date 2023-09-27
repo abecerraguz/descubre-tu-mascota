@@ -77,29 +77,29 @@ function Page() {
             }
           })
         })
-        resetTurnOkey()
-      
+        resetTurn()
+        setSuccess(prevSuccess => prevSuccess + 1)
       } else {
         setTimeout(() => {
-          resetTurnError()
-          ,1000
-        })
+          resetTurn()
+          setTurns(prevTurns => prevTurns + 1)
+        }, 1000);
+        setTimeout(() =>  resetTurn(), 1000  )
       }
     }
 
   }, [optionOne, optionTwo]);
 
-  const resetTurnError = () => {
-    setOptionOne(null)
-    setOptionTwo(null)
-    setTurns( prevTurns => prevTurns + 1 )
-    setDisabled(false)
-  }
+  // const resetTurnError = () => {
+  //   setOptionOne(null)
+  //   setOptionTwo(null)
+  //   setTurns( prevTurns => prevTurns + 1 )
+  //   setDisabled(false)
+  // }
 
-  const resetTurnOkey = () => {
+  const resetTurn= () => {
     setOptionOne(null)
     setOptionTwo(null)
-    setSuccess( prevTurns => prevTurns + 1)
     setDisabled(false)
   }
 
