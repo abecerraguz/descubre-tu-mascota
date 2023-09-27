@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 import Image from 'next/image'
 import iconMascota from "../../public/casa-de-mascotas.png"
 
-function page() {
+function Page() {
 
   const [cards, setCards] = useState([]);
   const [user, setUser] = useState(null);
@@ -112,7 +112,7 @@ function page() {
       <form className="formInitGame" onSubmit={initGame}>
         <div className="flex flex-wrap">
           <div className="w-full px-3">
-            <h2 className="font-bold tracking-wide uppercase border-b border-light-blue-500 border-opacity-50 mb-3 text-sky-500 text-center flex flex-col justify-center items-center text-xl"><span className="titleGame__img"><Image className="titleGame__img-img" src={iconMascota} /></span><span>Bienvenido a Descubre tu mascota!</span></h2>
+            <h2 className="font-bold tracking-wide uppercase border-b border-light-blue-500 border-opacity-50 mb-3 text-sky-500 text-center flex flex-col justify-center items-center text-xl"><span className="titleGame__img"><Image className="titleGame__img-img" src={iconMascota} alt="Icono Mascota" /></span><span>Bienvenido a Descubre tu mascota!</span></h2>
             <label className="block uppercase tracking-wide text-sky-400 text-xs font-bold mb-2" for="grid-password">
               Nombre
             </label>
@@ -123,7 +123,7 @@ function page() {
       </form>
       <div className="gameHidden">
 
-        <h1 className="text-2xl font-bold tracking-wide uppercase border-b border-gray-500 mb-3 titleGame"><span className="titleGame__img"><img className="titleGame__img-img" src="/casa-de-mascotas.png" /></span> <span>DESCUBRE TU MASCOTA!</span></h1>
+        <h1 className="text-2xl font-bold tracking-wide uppercase border-b border-gray-500 mb-3 titleGame"><span className="titleGame__img"><Image  className="titleGame__img-img" src={iconMascota} alt="Icono Mascota"/></span> <span>DESCUBRE TU MASCOTA!</span></h1>
         <p className="p-5 bg-sky-600 rounded my-5 text-center flex justify-between"><span>Bienvenido!! : {user}</span>    <span>Puntaje : {turns}</span></p>
 
         <section className='gap-3 grid md:grid-cols-6 grid-cols-1'>
@@ -150,4 +150,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
