@@ -1,7 +1,8 @@
 "use client";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
-
+import Image from 'next/image'
+import iconMascota from "../../../public/cover.svg"
 function Card({ card, handleOption, flipped, disabled }) {
 
     const handleClick = () => {
@@ -30,9 +31,14 @@ function Card({ card, handleOption, flipped, disabled }) {
      
             <article className="bg-slate-800 hover:bg-slate-900 hover:cursor-pointer card">
                 <div className={flipped ? "flipped" : ""}>
-                <img src={card.src} className="object-cover h-48 w-96 front"/>
-                <img className='object-cover h-48 w-96 back'
-                        src="/cover.svg"
+                <Image 
+                    src={card.src}
+                    className="object-cover h-48 w-96 front"
+                    width={96}
+                    height={48}
+                />
+                <Image className='object-cover h-48 w-96 back'
+                        src={iconMascota}
                         onClick={handleClick}
                         alt="card back" />
                 </div>

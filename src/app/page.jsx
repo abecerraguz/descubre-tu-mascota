@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 import Card from "@/app/components/Card";
 import Swal from 'sweetalert2'
-
+import Image from 'next/image'
+import iconMascota from "../../public/casa-de-mascotas.png"
 
 function page() {
 
@@ -111,7 +112,7 @@ function page() {
       <form className="formInitGame" onSubmit={initGame}>
         <div className="flex flex-wrap">
           <div className="w-full px-3">
-            <h2 className="font-bold tracking-wide uppercase border-b border-light-blue-500 border-opacity-50 mb-3 text-sky-500 text-center flex flex-col justify-center items-center text-xl"><span className="titleGame__img"><img className="titleGame__img-img" src="/casa-de-mascotas.png" /></span><span>Bienvenido a Descubre tu mascota!</span></h2>
+            <h2 className="font-bold tracking-wide uppercase border-b border-light-blue-500 border-opacity-50 mb-3 text-sky-500 text-center flex flex-col justify-center items-center text-xl"><span className="titleGame__img"><Image className="titleGame__img-img" src={iconMascota} /></span><span>Bienvenido a Descubre tu mascota!</span></h2>
             <label className="block uppercase tracking-wide text-sky-400 text-xs font-bold mb-2" for="grid-password">
               Nombre
             </label>
