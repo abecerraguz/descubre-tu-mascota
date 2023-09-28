@@ -2,24 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
 
 body {
-  @apply bg-slate-700;
+  @apply bg-gradient-to-r from-slate-900 to-slate-700;
   @apply  text-white;
-  @apply bg-gradient-to-r from-slate-700
 }
 
 
@@ -32,7 +19,7 @@ body {
 .card img{
   width: 100%;
   display: block;
-  border: 4px solid #ffffffa4;
+  border: 1px solid #ffffffa4;
   border-radius: 6px;
   transition: all ease-in 0.5s;
   box-shadow: 5px 5px 5px 0px #000000a6;
@@ -41,7 +28,7 @@ body {
 .card img:hover{
   width: 100%;
   display: block;
-  border: 4px solid #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 6px;
   box-shadow: 10px 10px 10px 0px #000000a6;
 }
@@ -113,7 +100,7 @@ body {
   border-radius: 50%;
   background: #fff;
   box-shadow: 0 1px 6px rgba(5,27,44,.06), 0 2px 32px rgba(5,27,44,.16);
-  margin-bottom: 1em;
+  margin-bottom: 0.7rem;
   display: flex;
   justify-content: center;
   align-items: center;

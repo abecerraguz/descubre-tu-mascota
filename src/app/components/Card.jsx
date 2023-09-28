@@ -29,7 +29,7 @@ function Card({ card, handleOption, flipped, disabled }) {
   
     return (
      
-            <article className="bg-slate-800 hover:bg-slate-900 hover:cursor-pointer card">
+            <article className="hover:cursor-pointer card">
                 <div className={flipped ? "flipped" : ""}>
                 <Image 
                     src={card.src}
