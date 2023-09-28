@@ -15,15 +15,16 @@ function Card({ card, handleOption, flipped, disabled }) {
         if (flipped) {
             const cardFlippedImage = document.querySelectorAll('.flipped')
                 if(cardFlippedImage.length === 18){
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'success',
-                        title: 'Felicitaciones, ganaste!',
-                        showConfirmButton: false,
-                        timer: 5000
-                      })
+                    setTimeout(() => {
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: 'Felicitaciones, ganaste!',
+                            showConfirmButton: false,
+                            timer: 5000
+                          })
+                    }, 2000); 
                 }
-  
         }
     }, [flipped])
   
