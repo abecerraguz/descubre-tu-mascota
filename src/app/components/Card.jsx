@@ -33,15 +33,18 @@ function Card({ card, handleOption, flipped, disabled }) {
                 <div className={flipped ? "flipped" : ""}>
                 <Image 
                     src={card.src}
-                    className="object-cover h-48 w-96 front"
+                    className="object-cover h-24 w-24 md:h-48 md:w-96 front"
                     width={96}
                     height={48}
                     alt="card front"
                 />
-                <Image className='object-cover h-48 w-96 back'
+                <Image className='object-cover h-24 w-24 md:h-48 md:w-96 back'
                         src={iconMascota}
                         onClick={handleClick}
-                        alt="Fallback" />
+                        alt="Fallback"
+                        width={96}
+                        height={48}
+                />
                 </div>
             </article>
      
