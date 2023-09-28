@@ -5,12 +5,8 @@ import Swal from 'sweetalert2'
 import Image from 'next/image'
 import iconMascota from "../../public/casa-de-mascotas.png"
 
-import { Roboto } from 'next/font/google'
+
  
-const roboto = Roboto({
-  weight: '400',
-  subsets: ['latin'],
-})
 
 function Page() {
 
@@ -51,8 +47,7 @@ function Page() {
           cards
             .sort(()=>Math.random()-0.5 )
             .map((card)=>({...card }))
-
-          setCards(cards)
+            setCards(cards)         
         })
 
       setOptionOne(null)
@@ -113,12 +108,14 @@ function Page() {
     setOptionOne(null)
     setOptionTwo(null)
     setTurns(0)
+    setSuccess(0)
     setUser(localStorage.getItem('userName'))
     setDisabled(false)
 
     fetch('/api/mascotas')
       .then((res) => res.json())
       .then((data) => {
+        const cards = data.data
         cards
           .sort(()=>Math.random()-0.5 )
           .map((card)=>({...card }))
@@ -144,7 +141,7 @@ function Page() {
 
         <h1 className="text-xl md:text-2xl font-medium tracking-wider uppercase border-b border-gray-500 mb-3 titleGame"><span className="titleGame__img"><Image  className="titleGame__img-img" src={iconMascota} alt="Icono Mascota"/></span> <span>DESCUBRE TU MASCOTA!</span></h1>
         <p className="bg-gradient-to-r from-blue-800 to-indigo-900 rounded text-center flex flex-col md:flex-row justify-between p-3 my-3 md:p-5 md:my-5"><span>Bienvenido !! : {user}</span>    <span>Errores : {turns} / Aciertos : {success}</span></p>
-
+      
         <section className='gap-3 grid md:grid-cols-6 grid-cols-3'>
 
           {cards.map(element => (
