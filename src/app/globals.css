@@ -32,7 +32,6 @@ body {
   border-radius: 6px;
   box-shadow: 10px 10px 10px 0px #000000a6;
 }
-/* front of card */
 
 .card .front{
   transform: rotateY(90deg);
@@ -41,8 +40,6 @@ body {
 .flipped .front{
   transform: rotateY(0deg);
 }
-
-/* back of card */
 
 .card .back{
   transition: all ease-in 0.2s;
