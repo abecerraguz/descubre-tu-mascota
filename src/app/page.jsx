@@ -48,6 +48,10 @@ function Page() {
         .then((res) => res.json())
         .then((data) => {
           const cards = data.data
+          cards
+            .sort(()=>Math.random()-0.5 )
+            .map((card)=>({...card }))
+
           setCards(cards)
         })
 
@@ -115,7 +119,9 @@ function Page() {
     fetch('/api/mascotas')
       .then((res) => res.json())
       .then((data) => {
-        const cards = data.data
+        cards
+          .sort(()=>Math.random()-0.5 )
+          .map((card)=>({...card }))
         setCards(cards)
       })
   }
